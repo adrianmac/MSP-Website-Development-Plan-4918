@@ -3,7 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import * as FaIcons from 'react-icons/fa';
 import SafeIcon from '../common/SafeIcon';
 
-const { FaShieldAlt, FaCloud, FaNetworkWired, FaHeadset, FaArrowRight, FaTimes, FaCheck } = FaIcons;
+const { 
+  FaShieldAlt, 
+  FaCloud, 
+  FaNetworkWired, 
+  FaHeadset, 
+  FaArrowRight, 
+  FaTimes, 
+  FaCheck, 
+  FaVolumeUp 
+} = FaIcons;
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -133,6 +142,47 @@ const Services = () => {
       }
     },
     {
+      icon: FaVolumeUp,
+      title: "Audio System Solutions",
+      shortDescription: "Professional audio system design, installation, and integration for restaurants, bars, and hospitality venues.",
+      features: [
+        "Multi-zone audio system design",
+        "Commercial-grade speaker installation",
+        "Digital audio management systems",
+        "Background music solutions",
+        "Integration with existing systems"
+      ],
+      detailedContent: {
+        overview: "Create the perfect ambiance for your restaurant or hospitality venue with our professional audio system solutions. We design and install high-quality, reliable audio systems that enhance your customer experience while integrating seamlessly with your other technology systems.",
+        keyBenefits: [
+          "Customized sound zoning for different areas",
+          "High-quality audio that enhances guest experience",
+          "Easy-to-use control systems for staff",
+          "Scalable solutions that grow with your business",
+          "Professional installation with minimal disruption"
+        ],
+        serviceDetails: [
+          {
+            name: "Multi-Zone Audio Design",
+            description: "Custom audio zoning that allows different music or volume levels in separate areas of your venue, creating the perfect atmosphere for each space from quiet dining to lively bar areas."
+          },
+          {
+            name: "Commercial Audio Installation",
+            description: "Professional installation of commercial-grade speakers, amplifiers, and control systems designed for durability in high-use environments with consistent sound coverage."
+          },
+          {
+            name: "Digital Audio Management",
+            description: "Advanced digital audio processors and management systems that provide precise control over sound quality, with scheduling capabilities for automatic volume adjustments during different business hours."
+          },
+          {
+            name: "System Integration",
+            description: "Seamless integration with your existing technology systems including video displays, security systems, and building automation for comprehensive venue management."
+          }
+        ],
+        pricing: "Audio system projects start at $3,500, maintenance plans from $149/month"
+      }
+    },
+    {
       icon: FaHeadset,
       title: "Managed IT Services",
       shortDescription: "Proactive IT management and support to keep your technology running smoothly and your team productive.",
@@ -212,7 +262,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}

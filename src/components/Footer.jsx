@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import SafeIcon from '../common/SafeIcon';
 
-const { FaMapMarkerAlt, FaPhone, FaEnvelope } = FaIcons;
+const { FaMapMarkerAlt, FaPhone, FaEnvelope, FaAward } = FaIcons;
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -13,51 +13,40 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        "Managed IT Services",
-        "Cybersecurity Solutions",
-        "Cloud Services",
-        "Network Management",
-        "Backup & Recovery",
-        "VoIP & Communications"
+        { name: "Managed IT Services", action: "scrollToServices" },
+        { name: "Cybersecurity Solutions", action: "scrollToServices" },
+        { name: "Cloud Services", action: "scrollToServices" },
+        { name: "Network Management", action: "scrollToServices" },
+        { name: "Audio System Solutions", action: "scrollToServices" }
       ]
     },
     {
       title: "Industries",
       links: [
-        "Restaurants & Hospitality",
-        "Healthcare",
-        "Retail",
-        "Manufacturing",
-        "Professional Services",
-        "Non-Profit Organizations"
+        { name: "Restaurants & Hospitality", action: "scrollToIndustries" },
+        { name: "Healthcare", action: "scrollToIndustries" },
+        { name: "Retail", action: "scrollToIndustries" },
+        { name: "Small Business", action: "scrollToIndustries" },
+        { name: "Professional Services", action: "scrollToIndustries" },
+        { name: "Non-Profit Organizations", action: "scrollToIndustries" }
       ]
     },
     {
       title: "Company",
       links: [
         { name: "About Us", path: "/about" },
-        "Our Team",
-        "Careers",
-        "Blog",
-        "Case Studies",
+        { name: "Our Team", path: "/about" },
+        { name: "Case Studies", action: "scrollToTestimonials" },
+        { name: "Client Testimonials", action: "scrollToTestimonials" },
         { name: "Contact Us", action: "scrollToContact" }
       ]
     }
   ];
 
   const contactInfo = [
-    {
-      icon: FaMapMarkerAlt,
-      text: "123 Business Ave, Tech City, TC 10001"
-    },
-    {
-      icon: FaPhone,
-      text: "(555) 123-4567"
-    },
-    {
-      icon: FaEnvelope,
-      text: "info@techsolutions.com"
-    }
+    { icon: FaMapMarkerAlt, text: "123 Business Ave, Tech City, TC 10001" },
+    { icon: FaPhone, text: "(555) 123-4567" },
+    { icon: FaEnvelope, text: "info@kirrontech.com" }
   ];
 
   const scrollToContact = () => {
@@ -67,12 +56,69 @@ const Footer = () => {
     }
   };
 
+  const scrollToServices = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById('services');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById('services');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
+  const scrollToIndustries = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById('industries');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById('industries');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
+  const scrollToTestimonials = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById('testimonials');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById('testimonials');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   const handleLinkClick = (link) => {
     if (typeof link === 'object') {
       if (link.path) {
         navigate(link.path);
       } else if (link.action === 'scrollToContact') {
         scrollToContact();
+      } else if (link.action === 'scrollToServices') {
+        scrollToServices();
+      } else if (link.action === 'scrollToIndustries') {
+        scrollToIndustries();
+      } else if (link.action === 'scrollToTestimonials') {
+        scrollToTestimonials();
       }
     }
   };
@@ -89,14 +135,13 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold mb-6 relative">
-              TechSolutions
+              KirronTECH
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded"></span>
             </h3>
             <p className="text-gray mb-6 leading-relaxed">
               Providing professional IT services for small and medium businesses since 2010. 
               Industry-specific solutions for your technology challenges.
             </p>
-            
             <div className="space-y-4">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
@@ -123,7 +168,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <button 
+                    <button
                       onClick={() => handleLinkClick(link)}
                       className="text-gray hover:text-white transition-colors duration-300 text-left"
                     >
@@ -136,17 +181,33 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Copyright */}
-        <motion.div 
-          className="border-t border-gray-700 pt-8 text-center"
+        {/* BBB and Copyright */}
+        <motion.div
+          className="border-t border-gray-700 pt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray">
-            &copy; 2023 TechSolutions. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            {/* BBB Logo and Rating */}
+            <div className="flex items-center gap-4">
+              <img
+                src="https://www.bbb.org/TerminusContent/dist/img/bbb-logos/BBB-Accredited-Business-Horizontal-Blue.png"
+                alt="BBB Accredited Business Logo"
+                className="h-16 w-auto"
+              />
+              <div className="flex items-center gap-2 bg-blue-50 text-primary px-4 py-2 rounded-lg">
+                <SafeIcon icon={FaAward} className="text-xl" />
+                <span className="font-semibold">A+ Rating</span>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <p className="text-gray">
+              &copy; 2023 KirronTECH. All rights reserved.
+            </p>
+          </div>
         </motion.div>
       </div>
     </footer>

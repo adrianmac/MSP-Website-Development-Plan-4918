@@ -16,7 +16,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -45,7 +44,7 @@ const Header = () => {
   };
 
   return (
-    <motion.header 
+    <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white shadow-md py-4'
       }`}
@@ -55,14 +54,14 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <nav className="flex justify-between items-center">
-          <motion.div 
+          <motion.div
             className="flex items-center gap-3 text-2xl font-bold text-primary cursor-pointer"
             onClick={() => handleNavigation('/')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <SafeIcon icon={FaServer} className="text-secondary" />
-            <span>TechSolutions</span>
+            <span>KirronTECH</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -75,9 +74,11 @@ const Header = () => {
                 }`}
               >
                 Home
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    location.pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                ></span>
               </button>
             </li>
             <li>
@@ -88,9 +89,11 @@ const Header = () => {
                 }`}
               >
                 About
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    location.pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                ></span>
               </button>
             </li>
             {[
@@ -131,7 +134,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             className="md:hidden bg-white shadow-lg rounded-lg mt-4 p-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

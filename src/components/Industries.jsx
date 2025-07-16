@@ -4,10 +4,27 @@ import * as FaIcons from 'react-icons/fa';
 import SafeIcon from '../common/SafeIcon';
 
 const { 
-  FaCreditCard, FaEthernet, FaWifi, FaCashRegister, FaUtensils,
-  FaUserMd, FaShieldAlt, FaDatabase, FaLock, FaStethoscope,
-  FaShoppingCart, FaBarcode, FaChartLine, FaTags, FaStore,
-  FaBriefcase, FaUsers, FaCog, FaCloud
+  FaCreditCard, 
+  FaEthernet, 
+  FaWifi, 
+  FaCashRegister, 
+  FaUtensils, 
+  FaUserMd, 
+  FaShieldAlt, 
+  FaDatabase, 
+  FaLock, 
+  FaStethoscope, 
+  FaShoppingCart, 
+  FaBarcode, 
+  FaChartLine, 
+  FaTags, 
+  FaStore, 
+  FaBriefcase, 
+  FaUsers, 
+  FaCog, 
+  FaCloud,
+  FaMusic,
+  FaVolumeUp
 } = FaIcons;
 
 const Industries = () => {
@@ -38,9 +55,9 @@ const Industries = () => {
       description: "Reliable networking for POS systems, kitchen displays, and guest WiFi."
     },
     {
-      icon: FaCashRegister,
-      title: "POS Support",
-      description: "24/7 support for point-of-sale systems to prevent downtime during service hours."
+      icon: FaVolumeUp,
+      title: "Audio System Wiring",
+      description: "Professional audio system installation with multi-zone capabilities for dining areas and bars."
     }
   ];
 
@@ -51,7 +68,8 @@ const Industries = () => {
     "Secure guest WiFi solutions",
     "Online ordering platform security",
     "Digital menu board management",
-    "Kitchen display system integration"
+    "Kitchen display system integration",
+    "Multi-zone audio system installation and configuration"
   ];
 
   // Healthcare Content
@@ -183,8 +201,7 @@ const Industries = () => {
                   IT Solutions for <span className="text-blue-600">Healthcare</span>
                 </h3>
                 <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                  HIPAA-compliant technology solutions designed for medical practices, clinics, and healthcare facilities. 
-                  Protect patient data while improving operational efficiency and care delivery.
+                  HIPAA-compliant technology solutions designed for medical practices, clinics, and healthcare facilities. Protect patient data while improving operational efficiency and care delivery.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -233,7 +250,6 @@ const Industries = () => {
                   Get Healthcare IT Assessment
                 </motion.button>
               </div>
-
               <div className="flex-1 min-h-[400px] lg:min-h-[600px] bg-cover bg-center relative">
                 <img
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
@@ -245,7 +261,6 @@ const Industries = () => {
             </div>
           </motion.div>
         );
-
       case 'retail':
         return (
           <motion.div
@@ -261,8 +276,7 @@ const Industries = () => {
                   IT Solutions for <span className="text-purple-600">Retail</span>
                 </h3>
                 <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                  Comprehensive retail technology solutions that connect your online and offline sales channels. 
-                  From POS systems to e-commerce platforms, we help you deliver seamless customer experiences.
+                  Comprehensive retail technology solutions that connect your online and offline sales channels. From POS systems to e-commerce platforms, we help you deliver seamless customer experiences.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -311,7 +325,6 @@ const Industries = () => {
                   Get Retail IT Assessment
                 </motion.button>
               </div>
-
               <div className="flex-1 min-h-[400px] lg:min-h-[600px] bg-cover bg-center relative">
                 <img
                   src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
@@ -323,7 +336,6 @@ const Industries = () => {
             </div>
           </motion.div>
         );
-
       case 'small-business':
         return (
           <motion.div
@@ -339,8 +351,7 @@ const Industries = () => {
                   IT Solutions for <span className="text-green-600">Small Business</span>
                 </h3>
                 <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                  Comprehensive IT support designed for small businesses without dedicated IT departments. 
-                  Get enterprise-level technology solutions that fit your budget and scale with your growth.
+                  Comprehensive IT support designed for small businesses without dedicated IT departments. Get enterprise-level technology solutions that fit your budget and scale with your growth.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -389,7 +400,6 @@ const Industries = () => {
                   Get Small Business IT Assessment
                 </motion.button>
               </div>
-
               <div className="flex-1 min-h-[400px] lg:min-h-[600px] bg-cover bg-center relative">
                 <img
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
@@ -401,7 +411,6 @@ const Industries = () => {
             </div>
           </motion.div>
         );
-
       case 'restaurants':
       default:
         return (
@@ -418,8 +427,7 @@ const Industries = () => {
                   IT Solutions for <span className="text-restaurant-accent">Restaurants</span>
                 </h3>
                 <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                  Specialized technology services designed for the unique challenges of food service businesses. 
-                  From PCI compliance to kitchen networking, we keep your operations running smoothly.
+                  Specialized technology services designed for the unique challenges of food service businesses. From PCI compliance to kitchen networking, we keep your operations running smoothly.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -468,7 +476,6 @@ const Industries = () => {
                   Get Restaurant IT Assessment
                 </motion.button>
               </div>
-
               <div className="flex-1 min-h-[400px] lg:min-h-[600px] bg-cover bg-center relative">
                 <img
                   src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"

@@ -32,11 +32,11 @@ const ContactSection = () => {
       icon: FaEnvelope,
       title: "Email Addresses",
       details: [
-        "General: info@techsolutions.com",
-        "Support: support@techsolutions.com",
-        "Sales: sales@techsolutions.com"
+        "General: info@kirrontech.com",
+        "Support: support@kirrontech.com",
+        "Sales: sales@kirrontech.com"
       ],
-      link: "mailto:info@techsolutions.com"
+      link: "mailto:info@kirrontech.com"
     },
     {
       icon: FaClock,
@@ -82,8 +82,7 @@ const ContactSection = () => {
             <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-secondary rounded"></span>
           </h2>
           <p className="text-gray text-lg max-w-3xl mx-auto mt-6">
-            Ready to enhance your business technology? Contact us today for a comprehensive 
-            IT assessment and discover how we can improve your security, efficiency, and productivity.
+            Ready to enhance your business technology? Contact us today for a comprehensive IT assessment and discover how we can improve your security, efficiency, and productivity.
           </p>
         </motion.div>
 
@@ -98,7 +97,6 @@ const ContactSection = () => {
           >
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-2xl font-bold text-dark mb-6">Contact Information</h3>
-              
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
@@ -117,8 +115,8 @@ const ContactSection = () => {
                       {info.details.map((detail, detailIndex) => (
                         <p key={detailIndex} className="text-gray-600 text-sm">
                           {info.link && detailIndex === 0 ? (
-                            <a 
-                              href={info.link} 
+                            <a
+                              href={info.link}
                               className="hover:text-primary transition-colors duration-300"
                             >
                               {detail}
@@ -165,33 +163,6 @@ const ContactSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Emergency Contact */}
-        <motion.div
-          className="mt-12 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl p-8 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold mb-4">Emergency IT Support</h3>
-          <p className="text-red-100 mb-6 max-w-2xl mx-auto">
-            Experiencing a critical IT issue? Our emergency support team is available 24/7 
-            to help resolve urgent problems that could impact your business operations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="tel:+15551234568"
-              className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-300 flex items-center gap-2"
-            >
-              <SafeIcon icon={FaPhone} />
-              Call Emergency Line: (555) 123-4568
-            </a>
-            <span className="text-red-100 text-sm">
-              Average response time: Under 15 minutes
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

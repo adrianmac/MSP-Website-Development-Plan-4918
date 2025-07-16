@@ -7,10 +7,26 @@ const { FaAward, FaUsers, FaHandshake, FaRocket, FaShieldAlt, FaChartLine, FaLin
 
 const About = () => {
   const stats = [
-    { number: "13+", label: "Years Experience", icon: FaAward },
-    { number: "500+", label: "Happy Clients", icon: FaUsers },
-    { number: "99.9%", label: "Uptime Guarantee", icon: FaShieldAlt },
-    { number: "24/7", label: "Support Available", icon: FaHandshake }
+    {
+      number: "13+",
+      label: "Years Experience",
+      icon: FaAward
+    },
+    {
+      number: "500+",
+      label: "Happy Clients",
+      icon: FaUsers
+    },
+    {
+      number: "99.9%",
+      label: "Uptime Guarantee",
+      icon: FaShieldAlt
+    },
+    {
+      number: "24/7",
+      label: "Support Available",
+      icon: FaHandshake
+    }
   ];
 
   const values = [
@@ -43,7 +59,7 @@ const About = () => {
       initials: "MC",
       bio: "15+ years experience in enterprise IT solutions. Former Microsoft Solutions Architect with expertise in cloud migration and cybersecurity.",
       linkedin: "#",
-      email: "michael@techsolutions.com"
+      email: "michael@kirrontech.com"
     },
     {
       name: "Sarah Williams",
@@ -51,7 +67,7 @@ const About = () => {
       initials: "SW",
       bio: "Technology visionary with 12+ years in network infrastructure and security. Certified in Cisco, VMware, and multiple cloud platforms.",
       linkedin: "#",
-      email: "sarah@techsolutions.com"
+      email: "sarah@kirrontech.com"
     },
     {
       name: "David Rodriguez",
@@ -59,7 +75,7 @@ const About = () => {
       initials: "DR",
       bio: "PCI compliance expert with 10+ years in hospitality IT. Specialized in restaurant wiring, POS systems, and kitchen technology.",
       linkedin: "#",
-      email: "david@techsolutions.com"
+      email: "david@kirrontech.com"
     },
     {
       name: "Jennifer Park",
@@ -67,7 +83,7 @@ const About = () => {
       initials: "JP",
       bio: "Cybersecurity expert with CISSP certification. Former government security consultant with expertise in threat detection and response.",
       linkedin: "#",
-      email: "jennifer@techsolutions.com"
+      email: "jennifer@kirrontech.com"
     }
   ];
 
@@ -116,11 +132,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About TechSolutions
+              About KirronTECH
             </h1>
             <p className="text-xl opacity-90 leading-relaxed">
-              Your trusted technology partner since 2010, specializing in comprehensive IT solutions 
-              for small businesses and the restaurant industry.
+              Your trusted technology partner since 2010, specializing in comprehensive IT solutions for small businesses and the restaurant industry.
             </p>
           </motion.div>
         </div>
@@ -165,19 +180,13 @@ const About = () => {
                 <span className="absolute -bottom-3 left-0 w-20 h-1 bg-secondary rounded"></span>
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Founded in 2010, TechSolutions began as a vision to bridge the technology gap for small 
-                and medium businesses. We recognized that many businesses were struggling with complex 
-                IT challenges without having the resources for a full-time IT department.
+                Founded in 2010, KirronTECH began as a vision to bridge the technology gap for small and medium businesses. We recognized that many businesses were struggling with complex IT challenges without having the resources for a full-time IT department.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Over the years, we've evolved from a small consulting firm to a comprehensive managed 
-                service provider, specializing in restaurant IT solutions, cybersecurity, and cloud services. 
-                Our expertise in PCI compliance and restaurant-specific networking has made us the go-to 
-                partner for the hospitality industry.
+                Over the years, we've evolved from a small consulting firm to a comprehensive managed service provider, specializing in restaurant IT solutions, cybersecurity, and cloud services. Our expertise in PCI compliance and restaurant-specific networking has made us the go-to partner for the hospitality industry.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Today, we serve over 500 businesses across multiple states, maintaining our commitment 
-                to personalized service and cutting-edge solutions that drive business success.
+                Today, we serve over 500 businesses across multiple states, maintaining our commitment to personalized service and cutting-edge solutions that drive business success.
               </p>
             </motion.div>
             <motion.div
@@ -214,7 +223,6 @@ const About = () => {
               The principles that guide everything we do
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
               <motion.div
@@ -256,7 +264,6 @@ const About = () => {
               Milestones that shaped our company
             </p>
           </motion.div>
-
           <div className="max-w-4xl mx-auto">
             {timeline.map((item, index) => (
               <motion.div
@@ -304,7 +311,6 @@ const About = () => {
               The experts behind your technology success
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <motion.div

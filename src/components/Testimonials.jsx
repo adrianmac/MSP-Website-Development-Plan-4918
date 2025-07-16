@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Testimonials = () => {
   const testimonials = [
     {
-      text: "TechSolutions implemented a complete PCI compliance solution for our restaurant chain. We passed our audit with flying colors and avoided $15k in potential fines.",
+      text: "KirronTECH implemented a complete PCI compliance solution for our restaurant chain. We passed our audit with flying colors and avoided $15k in potential fines.",
       author: "Michael Rodriguez",
       position: "Owner, Bella Italia Restaurants",
       initials: "MR"
@@ -14,6 +14,12 @@ const Testimonials = () => {
       author: "Sarah Johnson",
       position: "Operations Manager, Urban Grill",
       initials: "SJ"
+    },
+    {
+      text: "The audio system installation transformed our dining experience. Our customers love the ambiance, and staff can easily control different zones for each section.",
+      author: "Lisa Parker",
+      position: "General Manager, The Coastal Kitchen",
+      initials: "LP"
     },
     {
       text: "The cybersecurity training they provided saved us from a major phishing attack. Our staff now recognizes threats before they become problems.",
@@ -26,7 +32,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +48,7 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -54,12 +60,10 @@ const Testimonials = () => {
             >
               {/* Quote Mark */}
               <div className="absolute top-4 left-6 text-6xl text-primary opacity-10 font-serif">"</div>
-              
               <div className="relative z-10">
                 <p className="text-gray-700 italic mb-6 leading-relaxed">
                   "{testimonial.text}"
                 </p>
-                
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.initials}
