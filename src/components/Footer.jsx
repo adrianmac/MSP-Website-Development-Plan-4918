@@ -26,9 +26,7 @@ const Footer = () => {
         { name: "Restaurants & Hospitality", action: "scrollToIndustries" },
         { name: "Healthcare", action: "scrollToIndustries" },
         { name: "Retail", action: "scrollToIndustries" },
-        { name: "Small Business", action: "scrollToIndustries" },
-        { name: "Professional Services", action: "scrollToIndustries" },
-        { name: "Non-Profit Organizations", action: "scrollToIndustries" }
+        { name: "Small Business", action: "scrollToIndustries" }
       ]
     },
     {
